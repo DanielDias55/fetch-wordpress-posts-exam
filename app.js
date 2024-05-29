@@ -18,18 +18,6 @@ async function getPosts() {
   const data = await response.json();
   return data;
 }
-function displayPosts(posts) {
-  const postList = document.querySelector("#posts-list");
-
-  for (const post of posts) {
-    postList.insertAdjacentHTML(
-      "beforeend",
-      /*html*/ `
-          <li>${post.title.rendered}</li>
-         `
-    );
-  }
-}
 
 function displayPostsGrid(posts) {
   const postsGrid = document.querySelector("#posts-grid");
