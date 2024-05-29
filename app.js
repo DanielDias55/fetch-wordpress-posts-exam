@@ -13,22 +13,10 @@ async function initApp() {
 
 async function getPosts() {
   const response = await fetch(
-    "https://headless.cederdorff.dk/wp-json/wp/v2/posts?acf_format=standard"
+    "http://extracurricularexam.danieldias.dk//wp-json/wp/v2/posts?acf_format=standard"
   );
   const data = await response.json();
   return data;
-}
-function displayPosts(posts) {
-  const postList = document.querySelector("#posts-list");
-
-  for (const post of posts) {
-    postList.insertAdjacentHTML(
-      "beforeend",
-      /*html*/ `
-          <li>${post.title.rendered}</li>
-         `
-    );
-  }
 }
 function displayPostsGrid(posts) {
   const postsGrid = document.querySelector("#posts-grid");
