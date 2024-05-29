@@ -18,6 +18,19 @@ async function getPosts() {
   const data = await response.json();
   return data;
 }
+function displayPosts(posts) {
+  const postList = document.querySelector("#posts-list");
+
+  for (const post of posts) {
+    postList.insertAdjacentHTML(
+      "beforeend",
+      /*html*/ `
+          <li>${post.title.rendered}</li>
+         `
+    );
+  }
+}
+
 function displayPostsGrid(posts) {
   const postsGrid = document.querySelector("#posts-grid");
   for (const post of posts) {
@@ -27,6 +40,7 @@ function displayPostsGrid(posts) {
   <article class="grid-item">
     <img src="${post.acf.image}" alt="${post.title.rendered}" />
     <h2>${post.title.rendered}</h2>
+    
   </article>
 `
     );
