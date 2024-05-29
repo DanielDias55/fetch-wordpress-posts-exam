@@ -13,7 +13,7 @@ async function initApp() {
 
 async function getPosts() {
   const response = await fetch(
-    "http://extracurricularexam.danieldias.dk//wp-json/wp/v2/posts?acf_format=standard"
+    "https://extracurricularexam.danieldias.dk//wp-json/wp/v2/posts?acf_format=standard"
   );
   const data = await response.json();
   return data;
